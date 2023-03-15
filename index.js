@@ -46,9 +46,10 @@ Use the copy function below to do the following:
 */
 
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(array){
+  return [...array];
 }
+console.log('task1', copy(originalFlavors)); 
 
 
 
@@ -59,14 +60,20 @@ Confirm that an array is exactly 31 flavors. Your function should accept:
   3. Your function should return a boolean TRUE if the length of the array is 31 and FALSE if the length of the array is NOT 31.
 
 
+
 For Example: is31Flavors(originalFlavors) will return true if your code is working properly
 */
 
 
-function is31Flavors(/*your code here*/){
-  /*your code here*/
+function is31Flavors(array){
+  if (array.length === 31){
+    return true;
+  } else {
+    return false;
+  }
  }
 
+console.log(is31Flavors(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -82,9 +89,11 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
- }
+function addFlavor(array, string){
+  array.unshift(string);
+  return array;
+}
+ console.log('task3', addFlavor(originalFlavors, 'Rainbow Sherbert'));
 
 
 
@@ -100,9 +109,11 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(array){
+  array.pop();
+  return array;
 }
+console.log(removeLastFlavor(originalFlavors));
 
 
 
@@ -118,9 +129,11 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(array, number){
+  return array[number];
 }
+console.log(getFlavorByIndex(originalFlavors, 2));
+
 
 
 
@@ -138,9 +151,15 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(array, string){
+  for (let i = 0; i < array.length; i++) {
+    if (string === array[i]) {
+      array.splice(i, 1);
+    }
+  }
+  return array;
 }
+console.log(removeFlavorByName(originalFlavors, 'Rocky Road')); 
 
 
 
@@ -163,10 +182,16 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(array, string){
+  let filteredArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes(string)) {
+      filteredArray.push(array[i]);
+    }
+  }
+  return filteredArray;
 }
-
+console.log(filterByWord(originalFlavors, 'Chocolate'));
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
@@ -181,8 +206,10 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength(array){
+  for (let i = 0; i < array.length; i++) {
+    
+  }
 }
 
 
